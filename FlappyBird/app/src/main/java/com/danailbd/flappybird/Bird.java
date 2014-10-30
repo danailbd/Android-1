@@ -11,7 +11,7 @@ public class Bird extends GameObject{
 
 
     Bitmap birdBit;
-    PointF position = new PointF(10, 30);
+    PointF position = new PointF(80, 50);
     private int height;
 
     public Bird(Bitmap bird) {
@@ -31,8 +31,10 @@ public class Bird extends GameObject{
 
     @Override
     public void onGameEvent(GameEvent gameEvent) {
-        if(position.y > 0 && position.y < height)
+        if(position.y > -51 && position.y < height)
             position.y += MOVE_FRAME;
+        else
+            position.y = -50;
     }
 
     public void setHeight(int height) {
