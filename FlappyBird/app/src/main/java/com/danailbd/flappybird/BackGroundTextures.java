@@ -35,9 +35,9 @@ public class BackGroundTextures extends GameObject {
 
         if(position.x < (-1)*width) position.x = 0;
         canvas.drawBitmap(textures, new Rect(0, 0, textures.getWidth(), textures.getHeight()),
-                new Rect(0+(int)position.x, 0, width+(int)position.x, height*40/100), null);
+                new Rect(0+(int)position.x, Settings.STARTING_POS, width+(int)position.x, height * Settings.HEIGHT_DISPL_PER/100), null);
         canvas.drawBitmap(textures, new Rect(0, 0, textures.getWidth(), textures.getHeight()),
-                new Rect(width+(int)position.x, 0, width+width+(int)position.x, height*40/100), null);
+                new Rect(width+(int)position.x, Settings.STARTING_POS, width+width+(int)position.x, height * Settings.HEIGHT_DISPL_PER/100), null);
 
     }
 
@@ -48,6 +48,6 @@ public class BackGroundTextures extends GameObject {
 
     @Override
     public void onGameEvent(GameEvent gameEvent) {
-        position.x -= MOVE_FRAME;
+        position.x -= Settings.MOVE_FRAME;
     }
 }
