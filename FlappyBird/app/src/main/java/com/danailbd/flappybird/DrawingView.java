@@ -22,7 +22,10 @@ public class DrawingView extends ImageView {
                     R.drawable.clouds));
     private Bird bird = new Bird(BitmapFactory.decodeResource(getResources(),
             R.drawable.bird));
-    private Obstacles obst = new Obstacles(this.getContext());
+    private Obstacles obst = new Obstacles(BitmapFactory.decodeResource(getResources(),
+            R.drawable.warp),
+            BitmapFactory.decodeResource(getResources(),
+                    R.drawable.warp_d));
 
     public DrawingView(Context context) {
         super(context);
@@ -59,5 +62,9 @@ public class DrawingView extends ImageView {
 
     public void addGameObject(GameObject obj){
         gameObjects.add(obj);
+    }
+
+    public void makeBirdyFly(){
+        bird.fly();
     }
 }

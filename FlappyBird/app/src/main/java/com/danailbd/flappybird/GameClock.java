@@ -14,7 +14,7 @@ public class GameClock {
     private List<GameClockListener> clockListeners = new ArrayList<GameClockListener>();
 
     public static interface GameClockListener {
-        public void onGameEvent(GameEvent gameEvent);
+        public void onGameEvent( GameEvent gameEvent);
     }
 
     private Handler handler = new Handler();
